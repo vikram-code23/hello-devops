@@ -15,8 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - run: >
-          docker run --rm -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:latest
-          detect --source /repo --no-git --no-banner --redact -v
+          docker run --rm -v "$PWD:/repo" detect --source /repo --no-git --no-banner --redact -v
 
   sast:
     name: 2 SAST (semgrep)
